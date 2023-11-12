@@ -29,3 +29,4 @@ Most of the existing work in AIC preprocesses the Arabic text using standard pre
 
 In general, image captioning models take text labels along with images as input to train the model, and this text must be preprocessed and cleaned to reduce the text's noise and vocabulary size. We propose a framework that abstracts the preprocessing steps into three stages. These stages are general preprocessing (GPP), language-specific preprocessing (LSPP), and task-specific preprocessing (TSPP). It is illustrated in Figure \ref{Preprocessing_pipeline} and explained in detail below.
 
+[![preprocessing-pipeline111-2.png](https://i.postimg.cc/3wpdZWhb/preprocessing-pipeline111-2.png)](https://postimg.cc/nsFFFFCv)
