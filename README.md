@@ -9,3 +9,15 @@ Our proposed transformer-based architecture is shown in Fig. 1. The input image 
    $x$ = $CNN(i)$
 \
 $CNN(i)$ in the equation represents an abstraction over any CNN-based model that is used for image feature extraction. 
+After computing $x$, $x$ is used as input to the encoder block, which computes $z$ according to the equation.
+$z$ = $Encoder(x)$
+\
+$Encoder(x)$ in the equation represents an abstraction of the set of encoder blocks. The encoder block generally creates an attention-based representation that can find a particular piece of data within a context that could be ‘‘infinitely” huge. The encoder is composed of one or more identical layers in a stack. Each layer has a simple position-wise, completely connected feed-forward network, and a multi-head self-attention layer. Each sub-layer adopts layer normalization and a residual connection. The same dimension of data is output by each sublayer. In our architecture, the encoder block with multi-head attention converts x to the attended visual representation vector followed by feed-forward, which is applied to every attention vector to transform it into a format that the following (encoder or decoder) layer can understand $z = (z_1, ..., z_t)$. $z$ is the output vector of the encoder block and is fed to the decoder block
+$Decoder(z,s)$ in Equation \ref{eq:sdec} represents an abstraction of the set of encoder blocks. In our architecture, the decoder block uses $z$ along with the word embedding vector, $s$, of the input image's captions to generate the output sequence $y = (y_1,..., y_m)$. Word embedding is improved by positional encodings to take advantage of order information. $y$ is the output sequence of words of the decoder block according to the equation.
+
+\
+In general, the decoder is composed of one or more identical layers in a stack. Each layer has one sub-layer of a fully connected feed-forward network and two sub-layers of multi-head attention mechanisms. Each sub-layer adopts a residual connection and a layer normalization, just like the encoder. The initial multi-head attention sub-layer is adjusted to avoid positions from paying attention to subsequent positions so that the future of the target sequence is hidden when predicting the current position.
+\
+The word embedding goes through a masked multi-head attention mechanism which is different from a typical multi-head attention mechanism. The decoder block generates the sequence word by word, so it needs to prevent it from conditioning to future tokens. A second multi-headed attention layer takes the outputs of the encoder and the masked multi-headed attention layer to match the encoder's input to the decoder's input, enabling the decoder to select the encoder input that should receive the most attention. Then the output passes through a point-wise feed-forward layer.
+
+
