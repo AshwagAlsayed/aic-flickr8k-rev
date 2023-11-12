@@ -6,6 +6,6 @@ Image captioning is becoming increasingly important as visual media is created a
 Proposed by Vaswani et al. (2017), the transformer model is one of the deep-learning models that can be used for machine translation. It has been used in a wide range of NLP applications Wang et al. (2019); Raganato and Tiedemann (2018). In addition to NLP applications, the transformer model has also been used for image captioning Sharma et al. (2018). We propose a variant based on Sharma et al. (2018).
 Our proposed transformer-based architecture is shown in Fig. 1. The input image is translated into a vector with feature embedding using a CNN-based model. Then, the transformer encoder takes in the feature embedding of the image extracted by CNN, $x = (x_1,..., x_n)$. Thus, the image's feature vector $x$ is computed based on the equation.
 \
-   $ x = CNN(i)$
+   $x$ = $CNN(i)$
 \
 $CNN(i)$ in the equation represents an abstraction over any CNN-based model that is used for image feature extraction. 
