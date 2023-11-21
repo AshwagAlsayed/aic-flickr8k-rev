@@ -40,22 +40,39 @@ Language-specific preprocessing comprises steps that are specific to a language.
 
 **Unicode Normalization.** Unicode normalization transforms Unicode strings into their conventional form by normalizing them (characters that can be written as a combination of Unicode characters are converted into their decomposed form) [18].
 
-#### Orthographic Normalization.
-Orthographic normalization is the process of unifying different letter forms or visually comparable letters. For example, all “ء” characters are removed, the letter "ة" is replaced by “ه” and the letter “ى” is replaced by “ي”. Table 2 summarizes the letter normalization scheme.
+**Orthographic Normalization.** Orthographic normalization is the process of unifying different letter forms or visually comparable letters. For example, all “ء” characters are removed, the letter "ة" is replaced by “ه” and the letter “ى” is replaced by “ي”. Table 2 summarizes the letter normalization scheme.
 
-#### Dediacritization.
-The elimination of Arabic diacritical marks is known as dediacritization. Most Arabic NLP algorithms eliminate them because they make the data sparser [18]. For instance, the word مَكْتَبَةٌ is converted to مكتبة.
+**Dediacritization.** The elimination of Arabic diacritical marks is known as dediacritization. Most Arabic NLP algorithms eliminate them because they make the data sparser [18]. For instance, the word مَكْتَبَةٌ is converted to مكتبة.
 
-#### Morphological Tokenization.
-Standard word tokenization is the process of splitting sentences by whitespace. Morphological tokenization is a different kind of tokenization that separates Arabic words into their components, such as prefixes, stems, and suffixes. For example, the word "المكتبة" is rewritten as three tokens "ال", "مكتب", and "ة". The added "+" symbol denotes where the segment was cut off, allowing us to de-segment the text afterward.
+**Morphological Tokenization.** Standard word tokenization is the process of splitting sentences by whitespace. Morphological tokenization is a different kind of tokenization that separates Arabic words into their components, such as prefixes, stems, and suffixes. For example, the word "المكتبة" is rewritten as three tokens "ال", "مكتب", and "ة". The added "+" symbol denotes where the segment was cut off, allowing us to de-segment the text afterward.
 
 ### Task-specific Preprocessing
 In the task-specific preprocessing stage, the steps that make the text suitable for the image captioning model are applied, as shown in the third part of Figure 2.
-#### Markup Tokens.
-This step adds < start > and < end > tokens to each caption so that the model knows where the caption begins and ends.
+**Markup Tokens.** This step adds < start > and < end > tokens to each caption so that the model knows where the caption begins and ends.
 
-#### Vectorization.
-The TextVectorization step associates a unique integer value with each token. It also unifies the caption vectors’ length to a specific length, cutting off more extended captions, padding the shorter ones with zeros, and then transforming them into a vector of integers.
+**Vectorization.** The TextVectorization step associates a unique integer value with each token. It also unifies the caption vectors’ length to a specific length, cutting off more extended captions, padding the shorter ones with zeros, and then transforming them into a vector of integers.
 
 ### Preprocessing Tools for AIC Model Training
 In this paper, we aim to study the impact of three preprocessing tools, namely, the CAMeL Tools [18], ArabertPreprocessor [19], and Stanza [20].
+
+#### Preprocessing Tools
+This subsection gives a brief overview of each preprocessing tool we used in our study.
+
+##### CAMeL Tools
+CAMeL Tools [18] is an open-source Python-based toolkit that is used for preprocessing Arabic text and dialects, morphological modeling, dialect identification, named entity recognition, and sentiment analysis. These utilities are covered by the command-line interfaces (CLIs) and application programming interfaces (APIs) provided by CAMeL Tools. The CAMeL Tools toolkit has several features that make it flexible in use and reuse, modular, high-performance, and easy to use for beginners.
+
+##### ArabertPreprocessor
+ArabertPreprocessor is the text preprocessing component of AraBERT which is a transformer-based model designed for Arabic language understanding [19]. It provides multiple functions for Arabic text-processing and uses FARASA [36] for segmentation. The Farasa segmenter [36] is an Arabic word segmenter used to segment text into stems, prefixes, and suffixes. In addition, apply a specific pre/post-fixed indicator "+" to the segmented articles so that users can reattach the segments to the original term.
+
+##### Stanza
+Stanza [20] is created by the Stanford NLP Group [37]. It is a set of specific and efficient tools for analyzing the linguistics of various human languages. Tokenization, multi-word token (MWT) expansion, lemmatization, part-of-speech (POS) and morphological features tagging, dependency parsing, and named entity recognition are some techniques it contains that can be utilized in a pipeline.
+
+#### Comparison of Preprocessing Tools
+Several differences exist between the aforementioned tools. The CAMeL Tools toolkit provides utilities for preprocessing, morphological modeling, dialect identification, Diacritization, named entity recognition, tokenization, and sentiment analysis. ArabertPreprocessor provides features like Diacritization, tatweel removal, and tokenization. Stanza provides multiple features, including MWT expansion, tokenization, lemmatization, morphological features tagging, and named entity recognition. Table 3 compares the availability of features among the three tools. While these tools may contain functions that can be used for various text-processing tasks, we focus our comparison on the features used for AIC.
+
+#### An Example of Tokenization
+Word and sentence composition in Arabic is more complex than in other languages, such as English, and it can lead to a very large lexicon size. For example, a complete sentence in other languages (e.g., English) can be replaced by a single word in Arabic. Thus, there is a need to tokenize Arabic sentences to allow better semantic representation. Moreover, a token is described as a sequence of one or more letters (characters) separated by spaces. For non-agglutinative languages like English, this definition works. With the Arabic language, tokenization is challenging due to the rich and complex morphology of Arabic [38]. The prefix "ال", which leads to redundancy in the vocabulary, also a more complicated example of one Arabic word being translated into a complete sentence in English, such as "وسيكتبونها" which is translated into an English sentence (and they will write it). Tokenization breaks down sentences into their morphemes:
+\
+"و+""سـ+""يـ+""كتب""+ون""+ها"
+The second word is divided into three parts, the prefixes "ي+" indicates the masculine present tense, then the stem quotes "لتقط", then the suffixes "+ون" indicates the masculine plural. The fourth word is divided into four parts, "ف+" denotes the order, "ي+" indicates the masculine present tense, the stem "قرؤ", and the suffix "+ون" which indicates the masculine plural. Note that the second and fourth words are divided by CAMeL Tools only. As for the third word, the letter "و+" (equivalent to “and” in English), it is separated in all three tools (but in Stanza, the + sign was not added), and in CAMeL Tools the masculine present "ي+" is also separated as in the previous word.
+
