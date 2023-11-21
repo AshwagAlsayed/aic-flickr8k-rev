@@ -35,11 +35,12 @@ In general, image captioning models take text labels along with images as input 
 General text preprocessing is a standard step used for text preprocessing in NLP and AI applications. It is suitable for most languages, like lower-casing all the words, removing punctuation, removing URLs, removing stop words, and removing numeric. Some general preprocessing steps are applied, such as eliminating punctuation and numeric, as shown in the first part (General Preprocessing) of Fig. 2.
 ### Language-specific Preprocessing
 Language-specific preprocessing comprises steps that are specific to a language. In our case, the language is Arabic, as shown in the second part of Fig. 2. However, our framework can be used for other languages as well. The morphology of Arabic is especially significant because the language is highly ordered and derivational. Arabic is written from right to left. The Arabic alphabet has 28 letters in total, including Hamza (ء(, and Arabic letters have various shapes depending on where they are in a word (beginning, middle, or end). For instance, the letters ‘‘ع “and ‘‘ك“, as shown in Table 1, have different shapes depending on their position in the word. The complicated concatenative structure of Arabic is responsible for the Arabic language’s lexical sparsity Al-Sallab et al. (2017). Words can take on various shapes while yet having the same meaning. For instance, although the definite article ‘‘ال“, which corresponds to ‘‘the” in English, is usually prefixed to other words, it is not an essential component of those words. So Arabic NLP applications must handle the Arabic language’s complexity. The following are some of the steps that have been taken to preprocess the Arabic text and reduce its complexity.
-\
-####Tatweel Removal.
+
+#### Tatweel Removal.
 Some Arabic characters are stretched using the symbol known as the tatweel. In informal Arabic, the tatweel symbol is frequently used to express a sentiment or meaning. The tatweel must be eliminated because it generates redundant spellings of the same word [35].
-\
-*Unicode Normalization.* Unicode normalization transforms Unicode strings into their conventional form by normalizing them (characters that can be written as a combination of Unicode characters are converted into their decomposed form) [18].
+
+#### Unicode Normalization.
+Unicode normalization transforms Unicode strings into their conventional form by normalizing them (characters that can be written as a combination of Unicode characters are converted into their decomposed form) [18].
 \
 *Orthographic Normalization.* Orthographic normalization is the process of unifying different letter forms or visually comparable letters. For example, all “ء” characters are removed, the letter "ة" is replaced by “ه” and the letter “ى” is replaced by “ي”. Table 2 summarizes the letter normalization scheme.
 \
