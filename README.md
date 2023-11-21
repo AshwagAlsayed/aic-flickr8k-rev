@@ -1,7 +1,6 @@
 # aic-flickr8k-rev
 Image captioning has become a fundamental operation that allows the automatic generation of text descriptions of images. However, most existing work focused on performing the image captioning task in English, and only a few proposals exist that address the image captioning task in Arabic. This paper focuses on understanding the factors that affect the performance of machine learning models performing Arabic image captioning (AIC). In particular, we focus on transformer-based models for AIC and study the impact of various text-preprocessing methods: CAMeL Tools, ArabertPreprocessor, and Stanza. Our study shows that using CAMeL Tools to preprocess text labels improves the AIC performance by up to 34-92% in the BLEU-4 score. In addition, we study the impact of image recognition models. Our results show that ResNet152 is better than EfficientNet-B0 and can improve BLEU scores performance by 9-11%. Furthermore, we investigate the impact of different datasets on the overall AIC performance and build an extended version of the Arabic Flickr8k dataset. Using the extended version improves the BLEU-4 score of the AIC model by up to 148%. Finally, utilizing our results, we build a model that significantly outperforms the state-of-the-art proposals in AIC by up to 196-379% in the BLUE-4 score.
 \
-
 Paper: [Here](https://www.sciencedirect.com/science/article/pii/S131915782300304X)
 \
 
