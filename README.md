@@ -12,8 +12,7 @@ Paper: [Here](https://www.sciencedirect.com/science/article/pii/S131915782300304
 
 ## Citation
 Please cite this [paper](https://www.sciencedirect.com/science/article/pii/S131915782300304X):
-<html>
-      <head>
+<pre><code>
         @article{alsayed2023performance,
         title={A performance analysis of transformer-based deep learning models for Arabic image captioning},
         author={Alsayed, Ashwaq and Qadah, Thamir M and Arif, Muhammad},
@@ -24,5 +23,4 @@ Please cite this [paper](https://www.sciencedirect.com/science/article/pii/S1319
         year={2023},
         publisher={Elsevier}
             }
-      </head>
-    </html>
+</code></pre>
