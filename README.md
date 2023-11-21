@@ -5,9 +5,10 @@ Paper: [Here](https://www.sciencedirect.com/science/article/pii/S131915782300304
 \
 
 ## Experimental Evaluation
-
+[comparision.png](https://postimg.cc/sv1p1SXN)
 **Comparison with the previous studies.** Our best-performing model (using ResNet152 and CAMeL preprocessing) is compared with previous studies ElJundi et al. [28], Hejazi et al. [29], and Emami et al. [30]. In all previous works, the Arabic Flickr8k dataset is used for training their models. Table 12 summarizes all the results for all metrics in our study. Figure 14 show the comparison results of B1, B2, B3, and B4 scores. Using the Flickr8k dataset, our model scored 0.4894, 0.317, 0.213, and 0.145 for B1, B2, B3, and B4, respectively. We improve the result using the same dataset by 25-47%, 29-64%, 42-103%, and 58-154%, for B1, B2, B3, and B4, respectively. Using the Flickr8k-Rev dataset, our model significantly improved over previous studies and scores 0.616, 0.47, 0.359, and 0.273 for B1, B2, B3, and B4, respectively. This is an performance improvement of 58-86%, 91-144%, 139-242%, and 197-379%, for B1, B2, B3, and B4, respectively. The above results show that our proposed model can achieve better results up to an order of magnitude.
 \
+[Qualitative.png](https://postimg.cc/LhLD2jJB)
 **Qualitative Results.** Figure 15 shows three sample images from the test set. The captions labeled with 1 are generated using the Flickr8k-Rev dataset, while the captions labeled with 2 are generated using the Flickr8k dataset. In both cases, we used CAMeL Tools as the preprocessor. In all three examples, the captions with 1 labels are more accurate and have fewer errors. In Figure 15a, the second sentence suffers from additional "ة" characters in the last word. The second caption in Figure 15b has a grammatical error. Finally, in Figure 15c, the first caption also describes the color of the dog as "بني", which means brown. Because Flickr8k has some spelling and grammatical errors, these errors are carried over to the results.
 
 ## Citation
