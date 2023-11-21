@@ -15,14 +15,14 @@ Please cite this [paper](https://www.sciencedirect.com/science/article/pii/S1319
 <html>
       <head>
         @article{alsayed2023performance,
-  title={A performance analysis of transformer-based deep learning models for Arabic image captioning},
-  author={Alsayed, Ashwaq and Qadah, Thamir M and Arif, Muhammad},
-  journal={Journal of King Saud University-Computer and Information Sciences},
-  volume={35},
-  number={9},
-  pages={101750},
-  year={2023},
-  publisher={Elsevier}
-}
+        title={A performance analysis of transformer-based deep learning models for Arabic image captioning},
+        author={Alsayed, Ashwaq and Qadah, Thamir M and Arif, Muhammad},
+        journal={Journal of King Saud University-Computer and Information Sciences},
+        volume={35},
+        number={9},
+        pages={101750},
+        year={2023},
+        publisher={Elsevier}
+            }
       </head>
     </html>
