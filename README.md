@@ -37,5 +37,8 @@ Please cite this [paper](https://www.sciencedirect.com/science/article/pii/S1319
 
 ## References
 [28] O. ElJundi, M. Dhaybi, K. Mokadam, H. M. Hajj, D. C. Asmar, Resources and end-to-end neural network models for arabic image captioning., in: VISIGRAPP (5: VISAPP), 2020, pp. 233–241.
+\
 [29] H. Hejazi, K. Shaalan, Deep learning for arabic image captioning: A comparative study of main factors and preprocessing recommendations, International Journal of Advanced Computer Science and Applications 12 (11) (2021).
+\
 [30] J. Emami, P. Nugues, A. Elnagar, I. Afyouni, Arabic image captioning using pre-training of deep bidirectional transformers, in: Proceedings of the 15th International Conference on Natural Language Generation, 2022, pp.40–51.
+\
