@@ -3,6 +3,9 @@ Image captioning has become a fundamental operation that allows the automatic ge
 \
 Paper: [Here](https://www.sciencedirect.com/science/article/pii/S131915782300304X)
 
+## Building the Flickr8k-Rev dataset
+When building the Flickr8k-Rev dataset, we developed a GUI-based application using Guizero [41] to facilitate writing captions for each image. The user interface displays the image and provides text boxes to add the five captions to the displayed image, save it with the click of a button, and then move to the next image with the “Next” button. Figure 4 shows a screenshot of the GUI. A user interface was created that enables us to see the current image and add five captions to it, and then press the “Save” button to save each of the five captions along with the path of the image in a separate line in a file and then users can press the “Next” button to move to the following image. Table 7 presents the dataset specifications. Our Flickr8k-Rev dataset contains 7,684 unique vocabularies, and the length of each caption ranges from 2 to 19. The mean, variance, and standard deviation values of the length of captions are 6.1152, 3.7905, and 1.9469, respectively. In Figure 5, we show the distribution of the caption lengths in Flickr8k-Rev. Captions in our dataset are verified by printing all unique vocabulary and ensuring they are free from spelling errors, wrongly repeated letters, single letters, extra spaces, and missing captions.
+
 
 ## Experimental Evaluation
 
