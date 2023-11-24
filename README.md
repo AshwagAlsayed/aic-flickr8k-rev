@@ -44,3 +44,5 @@ Please cite this [paper](https://www.sciencedirect.com/science/article/pii/S1319
 [29] H. Hejazi, K. Shaalan, Deep learning for arabic image captioning: A comparative study of main factors and preprocessing recommendations, International Journal of Advanced Computer Science and Applications 12 (11) (2021).
 \
 [30] J. Emami, P. Nugues, A. Elnagar, I. Afyouni, Arabic image captioning using pre-training of deep bidirectional transformers, in: Proceedings of the 15th International Conference on Natural Language Generation, 2022, pp.40–51.
+\
+[41] Getting started, https://lawsie.github.io/guizero/. URL https://lawsie.github.io/guizero/
